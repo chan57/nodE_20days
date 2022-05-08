@@ -1,4 +1,4 @@
-const fs = require('fs');
-const data = fs.readFileSync('./data.txt');
+const {a, Manager} = require('./1T.js');
 
-console.log(data.toString());
+Manager(a);
+Manager('asa');
