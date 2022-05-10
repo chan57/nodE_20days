@@ -4,3 +4,5 @@ for(let q = 0; q < 3; q++){
     obj.getName(Ar1[q]);
 }
 stil();
+
+//9:00
