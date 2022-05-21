@@ -45,3 +45,5 @@ const resultEr=(it)=>{
 }
 
 main();
+
+//d,sfsl
