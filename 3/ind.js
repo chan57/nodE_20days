@@ -1,8 +1,7 @@
-const { rejects } = require("assert");
-const { resolve } = require("path");
+
 const { Worker } = require('worker_threads');
 
-const resultEr=(it)=>{
+const resultEr=(it,)=>{
     return new Promise((resolve, reject)=>{
         const worker = new Worker('./worker.js', {
                 workerData:{
@@ -11,10 +10,11 @@ const resultEr=(it)=>{
         });
 
         worker.on('message', (ms)=>{
+            console.log(worker.threadId);   
             resolve(ms);
         });
 
-        worker.on('error',er=>{
+        worker.on('error',(er)=>{
             reject(er);
         });
 
@@ -25,8 +25,8 @@ const resultEr=(it)=>{
 }
 
     const main = async()=>{
-    try{
-        performance.mark('st');
+
+        performance.mark('start');
         const result = await Promise.all([
         resultEr(9),
         resultEr(4),
@@ -35,15 +35,10 @@ const resultEr=(it)=>{
     ]);
     console.log(result);
     performance.mark('en');
-    performance.measure('maim','st','en');
+    performance.measure('main','start','en');
     console.log(performance.getEntriesByName('main').pop());
-
-    } catch(e){
-        console.log(e)
-    }
     
 }
 
 main();
 
-//d,sfsl

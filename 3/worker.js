@@ -1,10 +1,8 @@
 const {parentPort, workerData} = require('worker_threads');
 
-const resultEr= (it) =>{
-    const b =  1;
-    for( ; it<999999; it++){
-       b += it;
-    }
+const resultEr= ({ it }) =>{
+    let b =  1;
+    b += Number(it);
     return b;
 }
 
