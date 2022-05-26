@@ -1,7 +1,9 @@
 process.on('message', (number)=>{
-    if(number){
-    console.log(number)
-    process.send('noonon')
+    let d = 0,s = 0;
+    for(; d<100000;d++){
+        s++;
     }
-    process.disconnect();
+        process.send(s)
+        process.disconnect()
+        
 })
