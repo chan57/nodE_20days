@@ -1,14 +1,19 @@
 {
   "name": "pogoda",
   "version": "1.0.0",
-  "description": "",
-  "main": "p.js",
+  "description": "weather cli",
+  "main": "weather.js",
+  "type": "module",
+  "bin": {
+    "weather": "weather.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Autor",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1"
   }
 }
